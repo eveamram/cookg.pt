@@ -3,7 +3,7 @@ import os
 import openai
 from cooklang import parse_cooklang, convert_to_markdown
 
-st.title("cookg.pt")
+st.title("cookgpt")
 
 OPENAI_KEY = os.getenv("OPENAI_COOKGPT_KEY")
 
