@@ -49,7 +49,7 @@ def assemble_input(cuisine, ingredients, type_of_dish, difficulty):
 
 def gen_recipe(cuisine, ingredients, type_of_dish, difficulty):
     return openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {"role": "system", "content": SECRET_SAUCE},
             {
@@ -83,7 +83,7 @@ type_of_dish = st.radio(
     horizontal=True,
 )
 
-with st.spinner():
+with st.spinner("Cooking..."):
     if st.button("generate"):
         recipe = gen_recipe(cuisine, ingredients, type_of_dish, difficulty)
         raw = recipe["choices"][0]["message"]["content"]
